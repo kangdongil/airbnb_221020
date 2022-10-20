@@ -1,0 +1,19 @@
+tasks:
+  - init: |
+      curl -sSL https://install.python-poetry.org | python3 -
+      poetry shell
+      poetry add django
+      python manage.py makemigrations
+      python manage.py migrate
+  - command: |
+      poetry shell
+      python manage.py runserver
+  
+ports:
+  - port: 8000
+    visibility: private
+    onOpen: open-browser
+
+vscode:
+  extensions:
+    - ms-python.python
