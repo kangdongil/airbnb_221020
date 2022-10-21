@@ -8,6 +8,7 @@ packages = [{include = "airbnb_221020"}]
 
 [tool.poetry.dependencies]
 python = "^3.8"
+Django = "^4.1.2"
 
 
 [tool.poetry.group.dev.dependencies]
