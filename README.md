@@ -41,6 +41,29 @@
 ### 0.4.1 Django Project 설정하기
 - `config.settings`
   ```python3
+  # Allow Gitpod To run Django Server
+  ALLOWED_HOSTS = ["localhost"]
+  CSRF_TRUSTED_ORIGINS = ["https://*.ws-us72.gitpod.io"]
   # To use Server Timezone
-  TIME_ZONE = "Asia/Seoul"
+  TIME_ZONE = "Asia/Seoul
   ```
+
+### 0.4.2 Django Project Command(`manage.py`) 사용하기
+  - `python manage.py [COMMAND]`
+  - `runserver`: Django 서버 시작하기
+  - `createsuperuser`: Admin 계정 만들기
+    - admin 계정을 저장할 DB와 migration이 필요하다
+    - DB를 초기화(삭제)할 때마다 admin 계정을 새로 만들어야 한다
+  - `makemigrations` >> `migrate`: Model의 변경사항을 DB에 반영하는 행위
+    - 세부적으로 `makemigrations`은 파일생성,   
+      `migrate`는 변경된 내용을 적용한다.
+  - `shell`: Django Shell 켜기
+    - `ORM` 등 Django 코드를 콘솔에서 테스트하기 좋다
+
+### 0.5 Django Server 시작하기
+1. `python manage.py runserver`
+2. `python manage.py makemigrations`
+3. `python manage.py migrate`
+4. `python manage.py createsuperuser`
+5. `/admin` 접속하여 admin 계정으로 로그인하기
+6. `Admin Panel`을 접속했다면 서버 준비완료
